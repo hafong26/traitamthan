@@ -1,0 +1,306 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phòng chứa bệnh nhân</title>
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="512x512.png" type="image/x-icon">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Bungee Inline';
+        }
+        
+        body {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            user-select: none;
+        }
+        /* Text Jump */
+        
+        .title {
+            text-align: center;
+            font-family: 'Bungee Inline', cursive;
+        }
+        
+        .title span {
+            position: relative;
+            padding: 5px;
+            font-size: 35px;
+            animation: jump .2s linear infinite;
+        }
+        
+        @keyframes jump {
+            0%,
+            100% {
+                top: 0;
+            }
+            33% {
+                top: .5em;
+            }
+            66% {
+                top: -.5em;
+            }
+        }
+        /* Navbar */
+        
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: #000;
+            color: #fff;
+        }
+        
+        .navbar ul {
+            padding: 0;
+        }
+        
+        .navbar li {
+            display: inline-block;
+            padding: 10px;
+        }
+        /* Hitbox */
+        
+        .hitbox {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: rotate(0deg) translate(-50%, -50%);
+            transition: .5s;
+            border-radius: 50%;
+            overflow: hidden;
+            z-index: 99;
+            box-shadow: 0 0 15px #0005;
+        }
+        
+        img {
+            width: 200px;
+        }
+        
+        .hitbox:active {
+            cursor: pointer;
+        }
+        
+        .hitbox.active {
+            animation: hitbox 1s infinite ease;
+        }
+        
+        @keyframes hitbox {
+            0%,
+            100% {
+                box-shadow: 0 0 0 #fff;
+            }
+            50% {
+                box-shadow: 0 0 0 20px #fff;
+                transform: translate(-50%, -50%) rotate(-70deg);
+            }
+        }
+        /* Button Toggle */
+        
+        .btn-toggle {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin: 40px;
+            border: 2px solid #000;
+            margin-bottom: 60px;
+        }
+        
+        .btn-toggle i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+        }
+        
+        .btn-toggle:active {
+            cursor: pointer;
+        }
+        /* Dark Theme */
+        
+        .dark-theme {
+            background: black !important;
+            color: white !important;
+        }
+        
+        .dark-theme .navbar {
+            background: #fff;
+            color: #000;
+        }
+        
+        .dark-theme .text-jump {
+            background: #000;
+            color: #fff;
+        }
+        
+        .dark-theme .hitbox {
+            border: thin solid #fff;
+        }
+        
+        .dark-theme .btn-toggle {
+            background: #fff;
+            color: #000;
+            border: 2px solid #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <span style="animation-delay: 0s;">T</span>
+        <span style="animation-delay: 0.0833333s;">r</span>
+        <span style="animation-delay: 0.166667s;">ạ</span>
+        <span style="animation-delay: 0.25s;">i</span>
+        <span style="animation-delay: 0.333333s;"> </span>
+        <span style="animation-delay: 0.416667s;">t</span>
+        <span style="animation-delay: 0.5s;">â</span>
+        <span style="animation-delay: 0.583333s;">m</span>
+        <span style="animation-delay: 0.666667s;"></span>
+        <span style="animation-delay: 0.75s;">t</span>
+        <span style="animation-delay: 0.833333s;">h</span>
+        <span style="animation-delay: 0.916667s;">ầ</span>
+        <span style="animation-delay: 1s;">n</span>
+        <span style="animation-delay: 1.08333s;"></span>
+        <span style="animation-delay: 1.16667s;"></span>
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li><i class='bx bx-chevrons-left'></i></li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li><i class='bx bx-chevrons-right'></i></li>
+        </ul>
+    </nav>
+    <div class="hitbox">
+        <img src="512x512.png">
+    </div>
+    <section class="text">
+        <marquee>
+            Tải lại trang để thay đổi tốc độ chạy của chữ
+        </marquee>
+        <marquee>
+            Nhấp vào biểu tượng "con mắt" để bật Dark Mode
+        </marquee>
+        <marquee>
+            Click vào hình bộ xương để phát nhạc, Click vào hình bộ xương để phát nhạc
+        </marquee>
+        <marquee>
+            Tải lại trang để thay đổi tốc độ chạy của chữ
+        </marquee>
+        <marquee>
+            Nhấp vào biểu tượng "con mắt" để bật Dark Mode
+        </marquee>
+        <marquee>
+            Click vào hình bộ xương để phát nhạc, Click vào hình bộ xương để phát nhạc
+        </marquee>
+        <marquee>
+            Tải lại trang để thay đổi tốc độ chạy của chữ
+        </marquee>
+        <marquee>
+            Nhấp vào biểu tượng "con mắt" để bật Dark Mode
+        </marquee>
+        <marquee>
+            Click vào hình bộ xương để phát nhạc, Click vào hình bộ xương để phát nhạc
+        </marquee>
+        <marquee>
+            Tải lại trang để thay đổi tốc độ chạy của chữ
+        </marquee>
+        <marquee>
+            Nhấp vào biểu tượng "con mắt" để bật Dark Mode
+        </marquee>
+        <marquee>
+            Click vào hình bộ xương để phát nhạc, Click vào hình bộ xương để phát nhạc
+        </marquee>
+        <marquee>
+            Tải lại trang để thay đổi tốc độ chạy của chữ
+        </marquee>
+        <marquee>
+            Nhấp vào biểu tượng "con mắt" để bật Dark Mode
+        </marquee>
+        <marquee>
+            Click vào hình bộ xương để phát nhạc, Click vào hình bộ xương để phát nhạc
+        </marquee>
+        <marquee>
+            Tải lại trang để thay đổi tốc độ chạy của chữ
+        </marquee>
+        <marquee>
+            Nhấp vào biểu tượng "con mắt" để bật Dark Mode
+        </marquee>
+        <marquee>
+            Click vào hình bộ xương để phát nhạc, Click vào hình bộ xương để phát nhạc
+        </marquee>
+        <marquee>
+            Tải lại trang để thay đổi tốc độ chạy của chữ
+        </marquee>
+        <marquee>
+            Nhấp vào biểu tượng "con mắt" để bật Dark Mode
+        </marquee>
+        <marquee>
+            Click vào hình bộ xương để phát nhạc, Click vào hình bộ xương để phát nhạc
+        </marquee>
+
+    </section>
+    <div class="btn-toggle">
+        <i class='bx bxs-show'></i>
+    </div>
+    <script>
+        const textMarquee = document.querySelectorAll('.text marquee')
+        const btnToggle = document.querySelector('.btn-toggle')
+        const hitbox = document.querySelector('.hitbox')
+        const audio = new Audio("./intheend.mp3")
+
+
+
+        function runTextMarquee() {
+            for (i = 0; i < textMarquee.length; i++) {
+                random = Math.floor(Math.random() * 100)
+                textMarquee[i].setAttribute('scrollamount', random)
+            }
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle("dark-theme")
+        }
+
+        function activeHitbox() {
+            hitbox.classList.add("active")
+            audio.play()
+            moveRandom()
+            setInterval(moveRandom, 1000)
+        }
+
+        function moveRandom() {
+            var move = document.querySelector('.hitbox')
+            var x = Math.floor(Math.random() * 100)
+            var y = Math.floor(Math.random() * 100)
+            Object.assign(move.style, {
+                left: x + "%",
+                top: y + "%"
+            })
+        }
+        runTextMarquee()
+        btnToggle.onclick = () => toggleTheme()
+        hitbox.onclick = () => activeHitbox()
+    </script>
+
+
+</body>
+
+</html>
