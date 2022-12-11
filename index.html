@@ -27,12 +27,12 @@
         .title {
             text-align: center;
             font-family: 'Bungee Inline', cursive;
+            font-size: 35px;
         }
         
         .title span {
             position: relative;
             padding: 5px;
-            font-size: 35px;
             animation: jump .2s linear infinite;
         }
         
@@ -105,21 +105,11 @@
         
         .btn-toggle {
             position: absolute;
-            bottom: 0;
-            right: 0;
+            bottom: 15px;
+            right: 15px;
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            margin: 40px;
+            padding: 10px;
             border: 2px solid #000;
-            margin-bottom: 60px;
-        }
-        
-        .btn-toggle i {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             font-size: 30px;
         }
         
@@ -151,6 +141,19 @@
             background: #fff;
             color: #000;
             border: 2px solid #fff;
+        }
+        /* Responsive */
+        
+        @media (max-width:800px) {
+            .title {
+                font-size: 22px !important;
+            }
+            .hitbox img {
+                width: 100px !important;
+            }
+            .text marquee {
+                margin-bottom: 15px;
+            }
         }
     </style>
 </head>
